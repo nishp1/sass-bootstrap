@@ -5,7 +5,7 @@
 
 .carousel {
   position: relative;
-  margin-bottom: $baseLineHeight;
+  margin-bottom: $line-height-base;
   line-height: 1;
 }
 
@@ -80,7 +80,7 @@
   line-height: 30px;
   color: $white;
   text-align: center;
-  background: $grayDarker;
+  background: $gray-darker;
   border: 3px solid $white;
   @include border-radius(23px);
   @include opacity(50);
@@ -142,13 +142,13 @@
   right: 0;
   bottom: 0;
   padding: 15px;
-  background: $grayDark;
+  background: $gray-dark;
   background: rgba(0,0,0,.75);
 }
 .carousel-caption h4,
 .carousel-caption p {
   color: $white;
-  line-height: $baseLineHeight;
+  line-height: $line-height-base;
 }
 .carousel-caption h4 {
   margin: 0 0 5px;

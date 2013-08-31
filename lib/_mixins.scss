@@ -79,7 +79,7 @@
 
 // Placeholder text
 // -------------------------
-@mixin placeholder($color: $placeholderText) {
+@mixin placeholder($color: $input-color-placeholder) {
   &:-moz-placeholder {
     color: $color;
   }
@@ -116,28 +116,28 @@
 // --------------------------------------------------
 
 @mixin font-family-serif() {
-  font-family: $serifFontFamily;
+  font-family: $font-family-serif;
 }
 @mixin font-family-sans-serif() {
-  font-family: $sansFontFamily;
+  font-family: $font-family-sans-serif;
 }
 @mixin font-family-monospace() {
-  font-family: $monoFontFamily;
+  font-family: $font-family-monospace;
 }
-@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+@mixin font-shorthand($size: $font-size-base, $weight: normal, $lineHeight: $line-height-base) {
   font-size: $size;
   font-weight: $weight;
   line-height: $lineHeight;
 }
-@mixin font-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+@mixin font-serif($size: $font-size-base, $weight: normal, $lineHeight: $line-height-base) {
   @include font-family-serif();
   @include font-shorthand($size, $weight, $lineHeight);
 }
-@mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+@mixin font-sans-serif($size: $font-size-base, $weight: normal, $lineHeight: $line-height-base) {
   @include font-family-sans-serif();
   @include font-shorthand($size, $weight, $lineHeight);
 }
-@mixin font-monospace($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+@mixin font-monospace($size: $font-size-base, $weight: normal, $lineHeight: $line-height-base) {
   @include font-family-monospace();
   @include font-shorthand($size, $weight, $lineHeight);
 }
@@ -150,19 +150,19 @@
 @mixin input-block-level {
   display: block;
   width: 100%;
-  min-height: $inputHeight; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  min-height: $input-height; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   @include box-sizing(border-box); // Makes inputs behave like true block-level elements
 }
 
 
 
 // Mixin for form field states
-@mixin formFieldState($textColor: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
+@mixin formFieldState($text-color: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
   // Set the text color
   .control-label,
   .help-block,
   .help-inline {
-    color: $textColor;
+    color: $text-color;
   }
   // Style inputs accordingly
   .checkbox,
@@ -170,7 +170,7 @@
   input,
   select,
   textarea {
-    color: $textColor;
+    color: $text-color;
   }
   input,
   select,
@@ -185,9 +185,9 @@
   // Give a small background color for input-prepend/-append
   .input-prepend .add-on,
   .input-append .add-on {
-    color: $textColor;
+    color: $text-color;
     background-color: $backgroundColor;
-    border-color: $textColor;
+    border-color: $text-color;
   }
 }
 
@@ -358,7 +358,7 @@
 }
 
 // CSS3 Content Columns
-@mixin content-columns($columnCount, $columnGap: $gridGutterWidth) {
+@mixin content-columns($columnCount, $columnGap: $grid-gutter-width) {
   -webkit-column-count: $columnCount;
      -moz-column-count: $columnCount;
           column-count: $columnCount;
@@ -399,8 +399,8 @@
 }
 
 // Gradient Bar Colors for buttons and alerts
-@mixin gradientBar($primaryColor, $secondaryColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
-  color: $textColor;
+@mixin gradientBar($primaryColor, $secondaryColor, $text-color: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  color: $text-color;
   text-shadow: $textShadow;
   @include gradient-vertical($primaryColor, $secondaryColor);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
@@ -494,7 +494,7 @@
   // to negative-margin away, but so it goes.
   *width: 100%;
   height: 1px;
-  margin: (($baseLineHeight / 2) - 1) 1px; // 8px 1px
+  margin: (($line-height-base / 2) - 1) 1px; // 8px 1px
   *margin: -5px 0 5px;
   overflow: hidden;
   background-color: $top;
@@ -503,15 +503,15 @@
 
 // Button backgrounds
 // ------------------
-@mixin buttonBackground($startColor, $endColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+@mixin buttonBackground($startColor, $endColor, $text-color: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
-  @include gradientBar($startColor, $endColor, $textColor, $textShadow);
+  @include gradientBar($startColor, $endColor, $text-color, $textShadow);
   *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   @include reset-filter();
 
   // in these cases the gradient won't cover the background, so we override
   &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
-    color: $textColor;
+    color: $text-color;
     background-color: $endColor;
     *background-color: darken($endColor, 5%);
   }
@@ -528,7 +528,7 @@
 // Vertically center elements in the navbar.
 // Example: an element has a height of 30px, so write out `.navbarVerticalAlign(30px);` to calculate the appropriate top margin.
 @mixin navbarVerticalAlign($elementHeight) {
-  margin-top: ($navbarHeight - $elementHeight) / 2;
+  margin-top: ($navbar-height - $elementHeight) / 2;
 }
 
 
@@ -546,33 +546,33 @@
 // Table columns
 @mixin tableColumns($columnSpan: 1) {
   float: none; // undo default grid column styles
-  width: (($gridColumnWidth) * $columnSpan) + ($gridGutterWidth * ($columnSpan - 1)) - 16; // 16 is total padding on left and right of table cells
+  width: (($grid-column-width) * $columnSpan) + ($grid-gutter-width * ($columnSpan - 1)) - 16; // 16 is total padding on left and right of table cells
   margin-left: 0; // undo default grid column styles
 }
 
 // Make a Grid
 // Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
 @mixin makeRow() {
-  margin-left: $gridGutterWidth * -1;
+  margin-left: $grid-gutter-width * -1;
   @include clearfix();
 }
 @mixin makeColumn($columns: 1, $offset: 0) {
   float: left;
-  margin-left: ($gridColumnWidth * $offset) + ($gridGutterWidth * ($offset - 1)) + ($gridGutterWidth * 2);
-  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
+  margin-left: ($grid-column-width * $offset) + ($grid-gutter-width * ($offset - 1)) + ($grid-gutter-width * 2);
+  width: ($grid-column-width * $columns) + ($grid-gutter-width * ($columns - 1));
 }
 
 // The Grid
-@mixin grid-core($gridColumnWidth, $gridGutterWidth) {
+@mixin grid-core($grid-column-width, $grid-gutter-width) {
   .row {
-    margin-left: $gridGutterWidth * -1;
+    margin-left: $grid-gutter-width * -1;
     @include clearfix();
   }
 
   [class*="span"] {
     float: left;
     min-height: 1px; // prevent collapsing columns
-    margin-left: $gridGutterWidth;
+    margin-left: $grid-gutter-width;
   }
 
   // Set the container width, and override it for fixed navbars in media queries
@@ -580,45 +580,45 @@
   .navbar-static-top .container,
   .navbar-fixed-top .container,
   .navbar-fixed-bottom .container {
-    @include grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth);
+    @include grid-core-span($grid-columns, $grid-column-width, $grid-gutter-width);
   }
 
   // generate .spanX and .offsetX
-  @include grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
-  @include grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
+  @include grid-core-span-x($grid-columns, $grid-column-width, $grid-gutter-width);
+  @include grid-core-offset-x($grid-columns, $grid-column-width, $grid-gutter-width);
 }
 
-@mixin grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth) {
-  @for $i from 1 through $gridColumns {
-    .span#{$i} { @include grid-core-span($i, $gridColumnWidth, $gridGutterWidth); }
+@mixin grid-core-span-x($grid-columns, $grid-column-width, $grid-gutter-width) {
+  @for $i from 1 through $grid-columns {
+    .span#{$i} { @include grid-core-span($i, $grid-column-width, $grid-gutter-width); }
   }
 }
 
-@mixin grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth) {
-  @for $i from 1 through $gridColumns {
-    .offset#{$i} { @include grid-core-offset($i, $gridColumnWidth, $gridGutterWidth); }
+@mixin grid-core-offset-x($grid-columns, $grid-column-width, $grid-gutter-width) {
+  @for $i from 1 through $grid-columns {
+    .offset#{$i} { @include grid-core-offset($i, $grid-column-width, $grid-gutter-width); }
   }
 }
 
-@mixin grid-core-span($columns, $gridColumnWidth, $gridGutterWidth) {
-  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
+@mixin grid-core-span($columns, $grid-column-width, $grid-gutter-width) {
+  width: ($grid-column-width * $columns) + ($grid-gutter-width * ($columns - 1));
 }
 
-@mixin grid-core-offset($columns, $gridColumnWidth, $gridGutterWidth) {
-  margin-left: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns + 1));
+@mixin grid-core-offset($columns, $grid-column-width, $grid-gutter-width) {
+  margin-left: ($grid-column-width * $columns) + ($grid-gutter-width * ($columns + 1));
 }
 
 
 
-@mixin grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth) {
+@mixin grid-fluid($fluid-grid-column-width, $fluid-grid-gutter-width) {
   .row-fluid {
     width: 100%;
     @include clearfix();
     [class*="span"] {
       @include input-block-level();
       float: left;
-      margin-left: $fluidGridGutterWidth;
-      *margin-left: $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%);
+      margin-left: $fluid-grid-gutter-width;
+      *margin-left: $fluid-grid-gutter-width - (.5 / $grid-row-width * 100px * 1%);
     }
     [class*="span"]:first-child {
       margin-left: 0;
@@ -626,46 +626,46 @@
 
     // Space grid-sized controls properly if multiple per line
     .controls-row [class*="span"] + [class*="span"] {
-      margin-left: $fluidGridGutterWidth;
+      margin-left: $fluid-grid-gutter-width;
     }
 
     // generate .spanX and .offsetX
-    @include grid-fluid-span-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
-    @include grid-fluid-offset-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+    @include grid-fluid-span-x($grid-columns, $fluid-grid-column-width, $fluid-grid-gutter-width);
+    @include grid-fluid-offset-x($grid-columns, $fluid-grid-column-width, $fluid-grid-gutter-width);
   }
 }
 
-@mixin grid-fluid-span-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  @for $i from 1 through $gridColumns {
-    .span#{$i} { @include grid-fluid-span($i, $fluidGridColumnWidth, $fluidGridGutterWidth); }
+@mixin grid-fluid-span-x($grid-columns, $fluid-grid-column-width, $fluid-grid-gutter-width) {
+  @for $i from 1 through $grid-columns {
+    .span#{$i} { @include grid-fluid-span($i, $fluid-grid-column-width, $fluid-grid-gutter-width); }
   }
 }
 
-@mixin grid-fluid-offset-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  @for $i from 1 through $gridColumns {
-    .offset#{$i} { @include grid-fluid-offset($i, $fluidGridColumnWidth, $fluidGridGutterWidth); }
-    .offset#{$i}:first-child { @include grid-fluid-offset-first-child($i, $fluidGridColumnWidth, $fluidGridGutterWidth); }
+@mixin grid-fluid-offset-x($grid-columns, $fluid-grid-column-width, $fluid-grid-gutter-width) {
+  @for $i from 1 through $grid-columns {
+    .offset#{$i} { @include grid-fluid-offset($i, $fluid-grid-column-width, $fluid-grid-gutter-width); }
+    .offset#{$i}:first-child { @include grid-fluid-offset-first-child($i, $fluid-grid-column-width, $fluid-grid-gutter-width); }
   }
 }
 
-@mixin grid-fluid-span($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
-  *width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%);
+@mixin grid-fluid-span($columns, $fluid-grid-column-width, $fluid-grid-gutter-width) {
+  width: ($fluid-grid-column-width * $columns) + ($fluid-grid-gutter-width * ($columns - 1));
+  *width: ($fluid-grid-column-width * $columns) + ($fluid-grid-gutter-width * ($columns - 1)) - (.5 / $grid-row-width * 100px * 1%);
 }
 
-@mixin grid-fluid-offset($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth * 2);
-  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + ($fluidGridGutterWidth * 2) - (.5 / $gridRowWidth * 100px * 1%);
+@mixin grid-fluid-offset($columns, $fluid-grid-column-width, $fluid-grid-gutter-width) {
+  margin-left: ($fluid-grid-column-width * $columns) + ($fluid-grid-gutter-width * ($columns - 1)) + ($fluid-grid-gutter-width * 2);
+  *margin-left: ($fluid-grid-column-width * $columns) + ($fluid-grid-gutter-width * ($columns - 1)) - (.5 / $grid-row-width * 100px * 1%) + ($fluid-grid-gutter-width * 2) - (.5 / $grid-row-width * 100px * 1%);
 }
 
-@mixin grid-fluid-offset-first-child($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth);
-  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%);
+@mixin grid-fluid-offset-first-child($columns, $fluid-grid-column-width, $fluid-grid-gutter-width) {
+  margin-left: ($fluid-grid-column-width * $columns) + ($fluid-grid-gutter-width * ($columns - 1)) + ($fluid-grid-gutter-width);
+  *margin-left: ($fluid-grid-column-width * $columns) + ($fluid-grid-gutter-width * ($columns - 1)) - (.5 / $grid-row-width * 100px * 1%) + $fluid-grid-gutter-width - (.5 / $grid-row-width * 100px * 1%);
 }
 
 
 
-@mixin grid-input($gridColumnWidth, $gridGutterWidth) {
+@mixin grid-input($grid-column-width, $grid-gutter-width) {
   input,
   textarea,
   .uneditable-input {
@@ -674,23 +674,23 @@
 
   // Space grid-sized controls properly if multiple per line
   .controls-row [class*="span"] + [class*="span"] {
-    margin-left: $gridGutterWidth;
+    margin-left: $grid-gutter-width;
   }
 
   // generate .spanX
-  @include grid-input-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
+  @include grid-input-span-x($grid-columns, $grid-column-width, $grid-gutter-width);
 }
 
-@mixin grid-input-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth) {
-  @for $i from 1 through $gridColumns {
+@mixin grid-input-span-x($grid-columns, $grid-column-width, $grid-gutter-width) {
+  @for $i from 1 through $grid-columns {
     input.span#{$i},
     textarea.span#{$i},
     .uneditable-input.span#{$i} {
-      @include grid-input-span($i, $gridColumnWidth, $gridGutterWidth);
+      @include grid-input-span($i, $grid-column-width, $grid-gutter-width);
     }
   }
 }
 
-@mixin grid-input-span($columns, $gridColumnWidth, $gridGutterWidth) {
-  width: (($gridColumnWidth) * $columns) + ($gridGutterWidth * ($columns - 1)) - 14;
+@mixin grid-input-span($columns, $grid-column-width, $grid-gutter-width) {
+  width: (($grid-column-width) * $columns) + ($grid-gutter-width * ($columns - 1)) - 14;
 }

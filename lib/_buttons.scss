@@ -12,23 +12,23 @@
   @include ie7-inline-block();
   padding: 4px 12px;
   margin-bottom: 0; // For input.btn
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  @include buttonBackground($btnBackground, $btnBackgroundHighlight, $grayDark, 0 1px 1px rgba(255,255,255,.75));
-  border: 1px solid $btnBorder;
+  @include buttonBackground($btn-default-bg, $btn-default-highlight-bg, $gray-dark, 0 1px 1px rgba(255,255,255,.75));
+  border: 1px solid $btn-default-border-color;
   *border: 0; // Remove the border to prevent IE7's black border on input:focus
-  border-bottom-color: darken($btnBorder, 10%);
-  @include border-radius($baseBorderRadius);
+  border-bottom-color: darken($btn-default-border-color, 10%);
+  @include border-radius($border-radius-base);
   @include ie7-restore-left-whitespace(); // Give IE7 some love
   @include box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
 
   // Hover/focus state
   &:hover,
   &:focus {
-    color: $grayDark;
+    color: $gray-dark;
     text-decoration: none;
     background-position: 0 -15px;
 
@@ -68,9 +68,9 @@
 
 // Large
 .btn-large {
-  padding: $paddingLarge;
-  font-size: $fontSizeLarge;
-  @include border-radius($borderRadiusLarge);
+  padding: $padding-large;
+  font-size: $font-size-large;
+  @include border-radius($border-radius-large);
 }
 .btn-large [class^="icon-"],
 .btn-large [class*=" icon-"] {
@@ -79,9 +79,9 @@
 
 // Small
 .btn-small {
-  padding: $paddingSmall;
-  font-size: $fontSizeSmall;
-  @include border-radius($borderRadiusSmall);
+  padding: $padding-small;
+  font-size: $font-size-small;
+  @include border-radius($border-radius-small);
 }
 .btn-small [class^="icon-"],
 .btn-small [class*=" icon-"] {
@@ -94,9 +94,9 @@
 
 // Mini
 .btn-mini {
-  padding: $paddingMini;
-  font-size: $fontSizeMini;
-  @include border-radius($borderRadiusSmall);
+  padding: $padding-mini;
+  font-size: $font-size-mini;
+  @include border-radius($border-radius-small);
 }
 
 
@@ -143,27 +143,27 @@ input[type="button"] {
 // Set the backgrounds
 // -------------------------
 .btn-primary {
-  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
+  @include buttonBackground($btn-primary-bg, $btn-primary-highlight-bg);
 }
 // Warning appears are orange
 .btn-warning {
-  @include buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight);
+  @include buttonBackground($btn-warning-bg, $btn-warning-highlight-bg);
 }
 // Danger and error appear as red
 .btn-danger {
-  @include buttonBackground($btnDangerBackground, $btnDangerBackgroundHighlight);
+  @include buttonBackground($btn-danger-bg, $btn-danger-highlight-bg);
 }
 // Success appears as green
 .btn-success {
-  @include buttonBackground($btnSuccessBackground, $btnSuccessBackgroundHighlight);
+  @include buttonBackground($btn-success-bg, $btn-success-highlight-bg);
 }
 // Info appears as a neutral blue
 .btn-info {
-  @include buttonBackground($btnInfoBackground, $btnInfoBackgroundHighlight);
+  @include buttonBackground($btn-info-bg, $btn-info-highlight-bg);
 }
 // Inverse appears as dark gray
 .btn-inverse {
-  @include buttonBackground($btnInverseBackground, $btnInverseBackgroundHighlight);
+  @include buttonBackground($btn-inverse-bg, $btn-inverse-highlight-bg);
 }
 
 
@@ -212,17 +212,17 @@ input[type="submit"].btn {
 .btn-link {
   border-color: transparent;
   cursor: pointer;
-  color: $linkColor;
+  color: $link-color;
   @include border-radius(0);
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: $linkColorHover;
+  color: $link-color-hover;
   text-decoration: underline;
   background-color: transparent;
 }
 .btn-link[disabled]:hover,
 .btn-link[disabled]:focus {
-  color: $grayDark;
+  color: $gray-dark;
   text-decoration: none;
 }

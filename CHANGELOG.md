@@ -74,7 +74,7 @@ Hotfix release to address the carousel bug reports.
 
 - **Added four new example templates** to the docs, including a narrow marketing page, sign in form, sticky footer, and a fancy carousel (created for an upcoming .net magazine article).
 - **Added the media component**, to create larger common components like comments, Tweets, etc.
-- **New variable-driven typographic scale** based on `@baseFontSize` and `@baseLineHeight`.
+- **New variable-driven typographic scale** based on `@font-size-base` and `@line-height-base`.
 - Revamped mini, small, and large padding via new variables for inputs and buttons so everything is the same size.
 - Reverted 2.1.1's `.box-shadow();` mixin change that caused compiler errors.
 - Improved dropdown submenus to support dropups and left-aligned submenus.
@@ -98,8 +98,8 @@ For the full list of issues included in this release, visit the [2.2.0 milestone
 * Widened `.dl-horizontal dt` and `.horizontal-form .control-group` to better handle the increased font-size.
 * Dropdown submenus improved: now you only see the next level, not all levels, on hover of the submenu toggle.
 * Clarified jQuery and Bootstrap template requirements in Getting Started section.
-* `select` now utilizes `@inputBorder`.
-* `.lead` now scales up from `@baseFontSize` instead of being a fixed font-size and line-height.
+* `select` now utilizes `@$input-border`.
+* `.lead` now scales up from `@font-size-base` instead of being a fixed font-size and line-height.
 * Fixed the vertical three color gradient in latest Firefox.
 * Reordered some variables that caused errors in certain Less compilers.
 
@@ -164,10 +164,10 @@ Running makefile now require JSHint and Recess.
 - Overhauled the responsive utility classes to simplify required CSS, add `!important` to all declarations, and use `display: inherit` in place of `display: block` to account for different types of elements.
 - Removed `>` from fluid grid column selectors, meaning every element with a `.span*` class within a `.row-fluid` will use percentage widths instead of fixed-pixels.
 - Fixed regression in responsive images support as of 2.0.1. We've re-added `max-width: 100%;` to images by default. We removed it in our last release since we had folks complaining about Google Maps integration and other projects, but we're taking a different stance now on these things and will require developers to make these tweaks on their end.
-- Added variable `@navbarBrandColor` for the brand element in navbars, which defaults to `@navbarLinkColor`.
+- Added variable `@navbar-default-brand-color` for the brand element in navbars, which defaults to `@navbar-link-color`.
 - Font-family mixins now use variables for their stacks.
 - Fixed an unescaped `filter` on the `.reset-filter()` mixin that was causing some errors depending on your compiler.
-- Fixed regression in `.form-actions` background, which was too dark, by adding a new variable `@formActionsBackground` and changing the color to `#f5f5f5` instead of `#eee`.
+- Fixed regression in `.form-actions` background, which was too dark, by adding a new variable `@input-actions-background` and changing the color to `#f5f5f5` instead of `#eee`.
 - Fixed an issue on button group dropdowns where the background color was not using the button's darker color when the dropdown is open.
 - Generalized and simplified the open dropdown classes while adding smarter defaults. Instead of `.dropdown.open`, we now use just `.open`. On the defaults side, all dropdown menus now have rounded corners to start.
 - Improved active `.dropdown-toggle` styles (for dropdown buttons) by darkening the background and sharpening the inset shadow to match the active state of buttons.
@@ -176,7 +176,7 @@ Running makefile now require JSHint and Recess.
 - Removed `height: auto;` from `img` since it was overriding dimensions set via HTML attributes.
 - Fixed an issue of double borders on the top of tables with captions or colgroups.
 - Fixed issue with anchor buttons in the `.navbar-text`. Instead of a general styling on all anchors within an element with that class, we now have a new class to specifically apply appropriate link color.
-- Added support for `@navbarHeight` on the brand/project name and nav links for complete navbar height customization.
+- Added support for `@navbar-height` on the brand/project name and nav links for complete navbar height customization.
 - Fixed the black borders on buttons problem in IE7 by removing the border, increasing the line-height, and providing darker background colors.
 - Removed excess padding on `.search-query` inputs in IE7 since it doesn't have border-radius.
 - Updated alert messages in Components to use `button` elements as close icons instead of `a`. Both can be used, but an `a` will require `href="#"` for dismissal on iOS devices.
@@ -187,7 +187,7 @@ Running makefile now require JSHint and Recess.
 - Changed tabbable tabs to prevent issues in left and right aligned tabs. `.tab-content` would not growing to its parent's full width due to `display: table`. We removed that and the `width: 100%` and instead just set `overflow: auto` to clear the left and right aligned tabs.
 - Updated thumbnails to support fluid grid column sizing.
 - Added `>` to most of the button group selectors
-- Added new variable, `@inputBorderRadius`, to all form controls that previously made use of the static `3px` value everywhere.
+- Added new variable, `@$input-border-radius`, to all form controls that previously made use of the static `3px` value everywhere.
 - Changed the way we do `border-radius` for tables. Instead of the regular mixin that zeros out all other corners, we specify one corner only so they can be combined for use on single column table headers.
 - Updated Glyphicons Halflings from 1.5 to 1.6, introducing 20 new icons.
 - Added an `offset` paramater to the `.makeColumn`.

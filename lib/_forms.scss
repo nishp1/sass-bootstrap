@@ -8,7 +8,7 @@
 
 // Make all forms have space below them
 form {
-  margin: 0 0 $baseLineHeight;
+  margin: 0 0 $line-height-base;
 }
 
 fieldset {
@@ -22,17 +22,17 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: $baseLineHeight;
-  font-size: $baseFontSize * 1.5;
-  line-height: $baseLineHeight * 2;
-  color: $grayDark;
+  margin-bottom: $line-height-base;
+  font-size: $font-size-base * 1.5;
+  line-height: $line-height-base * 2;
+  color: $gray-dark;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 
   // Small
   small {
-    font-size: $baseLineHeight * .75;
-    color: $grayLight;
+    font-size: $line-height-base * .75;
+    color: $gray-light;
   }
 }
 
@@ -42,13 +42,13 @@ input,
 button,
 select,
 textarea {
-  @include font-shorthand($baseFontSize, normal, $baseLineHeight); // Set size, weight, line-height here
+  @include font-shorthand($font-size-base, normal, $line-height-base); // Set size, weight, line-height here
 }
 input,
 button,
 select,
 textarea {
-  font-family: $baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+  font-family: $font-family-base; // And only set font-family here for those that need it (note the missing label element)
 }
 
 // Identify controls by their labels
@@ -79,13 +79,13 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: $baseLineHeight;
+  height: $line-height-base;
   padding: 4px 6px;
-  margin-bottom: $baseLineHeight / 2;;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
+  margin-bottom: $line-height-base / 2;;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
   color: $gray;
-  @include border-radius($inputBorderRadius);
+  @include border-radius($input-border-radius);
   vertical-align: middle;
 }
 
@@ -117,8 +117,8 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-  background-color: $inputBackground;
-  border: 1px solid $inputBorder;
+  background-color: $input-bg;
+  border: 1px solid $input-border;
   @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
   @include transition(border linear .2s, box-shadow linear .2s);
 
@@ -154,16 +154,16 @@ input[type="checkbox"] {
 // Set the height of select and file controls to match text inputs
 select,
 input[type="file"] {
-  height: $inputHeight; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+  height: $input-height; /* In IE7, the height of the select element cannot be changed by height, only font-size */
   *margin-top: 4px; /* For IE7, add top margin to align select with labels */
-  line-height: $inputHeight;
+  line-height: $input-height;
 }
 
 // Make select elements obey height by applying a border
 select {
   width: 220px; // default input width + 10px of padding that doesn't get applied
-  border: 1px solid $inputBorder;
-  background-color: $inputBackground; // Chrome on Linux and Mobile Safari need background-color
+  border: 1px solid $input-border;
+  background-color: $input-bg; // Chrome on Linux and Mobile Safari need background-color
 }
 
 // Make multiple select elements height not fixed
@@ -187,9 +187,9 @@ input[type="checkbox"]:focus {
 // Make uneditable inputs look inactive
 .uneditable-input,
 .uneditable-textarea {
-  color: $grayLight;
-  background-color: darken($inputBackground, 1%);
-  border-color: $inputBorder;
+  color: $gray-light;
+  background-color: darken($input-bg, 1%);
+  border-color: $input-border;
   @include box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
   cursor: not-allowed;
 }
@@ -223,7 +223,7 @@ textarea {
 // Indent the labels to position radios/checkboxes as hanging
 .radio,
 .checkbox {
-  min-height: $baseLineHeight; // clear the floating input if there is no label text
+  min-height: $line-height-base; // clear the floating input if there is no label text
   padding-left: 20px;
 }
 .radio input[type="radio"],
@@ -298,7 +298,7 @@ textarea[class*="span"],
 // ----------------------
 
 // Grid sizes
-@include grid-input($gridColumnWidth, $gridGutterWidth);
+@include grid-input($grid-column-width, $grid-gutter-width);
 
 // Control row for multiple inputs per line
 .controls-row {
@@ -331,7 +331,7 @@ input[readonly],
 select[readonly],
 textarea[readonly] {
   cursor: not-allowed;
-  background-color: $inputDisabledBackground;
+  background-color: $input-bg-disabled;
 }
 // Explicitly reset the colors here
 input[type="radio"][disabled],
@@ -349,19 +349,19 @@ input[type="checkbox"][readonly] {
 
 // Warning
 .control-group.warning {
-  @include formFieldState($warningText, $warningText, $warningBackground);
+  @include formFieldState($state-warning-text, $state-warning-text, $state-warning-bg);
 }
 // Error
 .control-group.error {
-  @include formFieldState($errorText, $errorText, $errorBackground);
+  @include formFieldState($state-error-text, $state-error-text, $state-error-bg);
 }
 // Success
 .control-group.success {
-  @include formFieldState($successText, $successText, $successBackground);
+  @include formFieldState($state-success-text, $state-success-text, $state-success-bg);
 }
 // Info
 .control-group.info {
-  @include formFieldState($infoText, $infoText, $infoBackground);
+  @include formFieldState($state-info-text, $state-info-text, $state-info-bg);
 }
 
 // HTML5 invalid states
@@ -383,10 +383,10 @@ select:focus:invalid {
 // ------------
 
 .form-actions {
-  padding: ($baseLineHeight - 1) 20px $baseLineHeight;
-  margin-top: $baseLineHeight;
-  margin-bottom: $baseLineHeight;
-  background-color: $formActionsBackground;
+  padding: ($line-height-base - 1) 20px $line-height-base;
+  margin-top: $line-height-base;
+  margin-bottom: $line-height-base;
+  background-color: $input-actions-background;
   border-top: 1px solid #e5e5e5;
   @include clearfix(); // Adding clearfix to allow for .pull-right button containers
 }
@@ -398,12 +398,12 @@ select:focus:invalid {
 
 .help-block,
 .help-inline {
-  color: lighten($textColor, 15%); // lighten the text some for contrast
+  color: lighten($text-color, 15%); // lighten the text some for contrast
 }
 
 .help-block {
   display: block; // account for any element using help-block
-  margin-bottom: $baseLineHeight / 2;
+  margin-bottom: $line-height-base / 2;
 }
 
 .help-inline {
@@ -422,7 +422,7 @@ select:focus:invalid {
 .input-append,
 .input-prepend {
   display: inline-block;
-  margin-bottom: $baseLineHeight / 2;
+  margin-bottom: $line-height-base / 2;
   vertical-align: middle;
   font-size: 0; // white space collapse hack
   white-space: nowrap; // Prevent span and input from separating
@@ -433,7 +433,7 @@ select:focus:invalid {
   .uneditable-input,
   .dropdown-menu,
   .popover {
-    font-size: $baseFontSize;
+    font-size: $font-size-base;
   }
 
   input,
@@ -443,7 +443,7 @@ select:focus:invalid {
     margin-bottom: 0; // prevent bottom margin from screwing up alignment in stacked forms
     *margin-left: 0;
     vertical-align: top;
-    @include border-radius(0 $inputBorderRadius $inputBorderRadius 0);
+    @include border-radius(0 $input-border-radius $input-border-radius 0);
     // Make input on top when focused so blue border and shadow always show
     &:focus {
       z-index: 2;
@@ -452,15 +452,15 @@ select:focus:invalid {
   .add-on {
     display: inline-block;
     width: auto;
-    height: $baseLineHeight;
+    height: $line-height-base;
     min-width: 16px;
     padding: 4px 5px;
-    font-size: $baseFontSize;
+    font-size: $font-size-base;
     font-weight: normal;
-    line-height: $baseLineHeight;
+    line-height: $line-height-base;
     text-align: center;
     text-shadow: 0 1px 0 $white;
-    background-color: $grayLighter;
+    background-color: $gray-lighter;
     border: 1px solid #ccc;
   }
   .add-on,
@@ -483,7 +483,7 @@ select:focus:invalid {
   .add-on:first-child,
   .btn:first-child {
     // FYI, `.btn:first-child` accounts for a button group that's prepended
-    @include border-radius($inputBorderRadius 0 0 $inputBorderRadius);
+    @include border-radius($input-border-radius 0 0 $input-border-radius);
   }
 }
 
@@ -491,9 +491,9 @@ select:focus:invalid {
   input,
   select,
   .uneditable-input {
-    @include border-radius($inputBorderRadius 0 0 $inputBorderRadius);
+    @include border-radius($input-border-radius 0 0 $input-border-radius);
     + .btn-group .btn:last-child {
-      @include border-radius(0 $inputBorderRadius $inputBorderRadius 0);
+      @include border-radius(0 $input-border-radius $input-border-radius 0);
     }
   }
   .add-on,
@@ -504,7 +504,7 @@ select:focus:invalid {
   .add-on:last-child,
   .btn:last-child,
   .btn-group:last-child > .dropdown-toggle {
-    @include border-radius(0 $inputBorderRadius $inputBorderRadius 0);
+    @include border-radius(0 $input-border-radius $input-border-radius 0);
   }
 }
 
@@ -515,18 +515,18 @@ select:focus:invalid {
   .uneditable-input {
     @include border-radius(0);
     + .btn-group .btn {
-      @include border-radius(0 $inputBorderRadius $inputBorderRadius 0);
+      @include border-radius(0 $input-border-radius $input-border-radius 0);
     }
   }
   .add-on:first-child,
   .btn:first-child {
     margin-right: -1px;
-    @include border-radius($inputBorderRadius 0 0 $inputBorderRadius);
+    @include border-radius($input-border-radius 0 0 $input-border-radius);
   }
   .add-on:last-child,
   .btn:last-child {
     margin-left: -1px;
-    @include border-radius(0 $inputBorderRadius $inputBorderRadius 0);
+    @include border-radius(0 $input-border-radius $input-border-radius 0);
   }
   .btn-group:first-child {
     margin-left: 0;
@@ -630,12 +630,12 @@ input.search-query {
 
 // Margin to space out fieldsets
 .control-group {
-  margin-bottom: $baseLineHeight / 2;
+  margin-bottom: $line-height-base / 2;
 }
 
 // Legend collapses margin, so next element is responsible for spacing
 legend + .control-group {
-  margin-top: $baseLineHeight;
+  margin-top: $line-height-base;
   -webkit-margin-top-collapse: separate;
 }
 
@@ -645,13 +645,13 @@ legend + .control-group {
 .form-horizontal {
   // Increase spacing between groups
   .control-group {
-    margin-bottom: $baseLineHeight;
+    margin-bottom: $line-height-base;
     @include clearfix();
   }
   // Float the labels left
   .control-label {
     float: left;
-    width: $horizontalComponentOffset - 20;
+    width: $component-offset-horizontal - 20;
     padding-top: 5px;
     text-align: right;
   }
@@ -661,10 +661,10 @@ legend + .control-group {
     // don't inherit the margin of the parent, in this case .controls
     *display: inline-block;
     *padding-left: 20px;
-    margin-left: $horizontalComponentOffset;
+    margin-left: $component-offset-horizontal;
     *margin-left: 0;
     &:first-child {
-      *padding-left: $horizontalComponentOffset;
+      *padding-left: $component-offset-horizontal;
     }
   }
   // Remove bottom margin on block level help text since that's accounted for on .control-group
@@ -679,11 +679,11 @@ legend + .control-group {
   .input-prepend,
   .input-append {
     + .help-block {
-      margin-top: $baseLineHeight / 2;
+      margin-top: $line-height-base / 2;
     }
   }
   // Move over buttons in .form-actions to align with .controls
   .form-actions {
-    padding-left: $horizontalComponentOffset;
+    padding-left: $component-offset-horizontal;
   }
 }

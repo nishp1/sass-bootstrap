@@ -8,14 +8,14 @@
 .badge {
   display: inline-block;
   padding: 2px 4px;
-  font-size: $baseFontSize * .846;
+  font-size: $font-size-base * .846;
   font-weight: bold;
   line-height: 14px; // ensure proper line-height if floated
   color: $white;
   vertical-align: baseline;
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  background-color: $grayLight;
+  background-color: $gray-light;
 }
 // Set unique padding and border-radii
 .label {
@@ -51,20 +51,20 @@ a {
 // Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
 @each $item in label, badge {
   // Important (red)
-  .#{$item}-important         { background-color: $errorText; }
-  .#{$item}-important[href]   { background-color: darken($errorText, 10%); }
+  .#{$item}-important         { background-color: $state-error-text; }
+  .#{$item}-important[href]   { background-color: darken($state-error-text, 10%); }
   // Warnings (orange)
   .#{$item}-warning           { background-color: $orange; }
   .#{$item}-warning[href]     { background-color: darken($orange, 10%); }
   // Success (green)
-  .#{$item}-success           { background-color: $successText; }
-  .#{$item}-success[href]     { background-color: darken($successText, 10%); }
+  .#{$item}-success           { background-color: $state-success-text; }
+  .#{$item}-success[href]     { background-color: darken($state-success-text, 10%); }
   // Info (turquoise)
-  .#{$item}-info              { background-color: $infoText; }
-  .#{$item}-info[href]        { background-color: darken($infoText, 10%); }
+  .#{$item}-info              { background-color: $state-info-text; }
+  .#{$item}-info[href]        { background-color: darken($state-info-text, 10%); }
   // Inverse (black)
-  .#{$item}-inverse           { background-color: $grayDark; }
-  .#{$item}-inverse[href]     { background-color: darken($grayDark, 10%); }
+  .#{$item}-inverse           { background-color: $gray-dark; }
+  .#{$item}-inverse[href]     { background-color: darken($gray-dark, 10%); }
 }
 
 // Quick fix for labels/badges in buttons

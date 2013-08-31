@@ -25,16 +25,6 @@
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-146052-10']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -250,16 +240,16 @@
             <div class="row download-builder">
               <div class="span3">
                 <h3>Scaffolding</h3>
-                <label>@bodyBackground</label>
+                <label>@body-bg</label>
                 <input type="text" class="span3" placeholder="@white">
-                <label>@textColor</label>
-                <input type="text" class="span3" placeholder="@grayDark">
+                <label>@text-color</label>
+                <input type="text" class="span3" placeholder="@gray-dark">
 
                 <h3>Links</h3>
-                <label>@linkColor</label>
+                <label>@link-color</label>
                 <input type="text" class="span3" placeholder="#08c">
-                <label>@linkColorHover</label>
-                <input type="text" class="span3" placeholder="darken(@linkColor, 15%)">
+                <label>@link-color-hover</label>
+                <input type="text" class="span3" placeholder="darken(@link-color, 15%)">
                 <h3>Colors</h3>
                 <label>@blue</label>
                 <input type="text" class="span3" placeholder="#049cdb">
@@ -277,154 +267,154 @@
                 <input type="text" class="span3" placeholder="#7a43b6">
 
                 <h3>Sprites</h3>
-                <label>@iconSpritePath</label>
+                <label>@icon-sprite-path</label>
                 <input type="text" class="span3" placeholder="'../img/glyphicons-halflings.png'">
-                <label>@iconWhiteSpritePath</label>
+                <label>@icon-white-sprite-path</label>
                 <input type="text" class="span3" placeholder="'../img/glyphicons-halflings-white.png'">
 
                 <h3>Grid system</h3>
-                <label>@gridColumns</label>
+                <label>@grid-columns</label>
                 <input type="text" class="span3" placeholder="12">
-                <label>@gridColumnWidth</label>
+                <label>@grid-column-width</label>
                 <input type="text" class="span3" placeholder="60px">
-                <label>@gridGutterWidth</label>
+                <label>@grid-gutter-width</label>
                 <input type="text" class="span3" placeholder="20px">
-                <label>@gridColumnWidth1200</label>
+                <label>@grid-column-width-1200</label>
                 <input type="text" class="span3" placeholder="70px">
-                <label>@gridGutterWidth1200</label>
+                <label>@grid-gutter-width-1200</label>
                 <input type="text" class="span3" placeholder="30px">
-                <label>@gridColumnWidth768</label>
+                <label>@grid-column-width-768</label>
                 <input type="text" class="span3" placeholder="42px">
-                <label>@gridGutterWidth768</label>
+                <label>@grid-gutter-width-768</label>
                 <input type="text" class="span3" placeholder="20px">
 
               </div><!-- /span -->
               <div class="span3">
 
                 <h3>Typography</h3>
-                <label>@sansFontFamily</label>
+                <label>@font-family-sans-serif</label>
                 <input type="text" class="span3" placeholder="'Helvetica Neue', Helvetica, Arial, sans-serif">
-                <label>@serifFontFamily</label>
+                <label>@font-family-serif</label>
                 <input type="text" class="span3" placeholder="Georgia, 'Times New Roman', Times, serif">
-                <label>@monoFontFamily</label>
+                <label>@font-family-monospace</label>
                 <input type="text" class="span3" placeholder="Menlo, Monaco, 'Courier New', monospace">
 
-                <label>@baseFontSize</label>
+                <label>@font-size-base</label>
                 <input type="text" class="span3" placeholder="14px">
-                <label>@baseFontFamily</label>
-                <input type="text" class="span3" placeholder="@sansFontFamily">
-                <label>@baseLineHeight</label>
+                <label>@font-family-base</label>
+                <input type="text" class="span3" placeholder="@font-family-sans-serif">
+                <label>@line-height-base</label>
                 <input type="text" class="span3" placeholder="20px">
 
-                <label>@altFontFamily</label>
-                <input type="text" class="span3" placeholder="@serifFontFamily">
-                <label>@headingsFontFamily</label>
+                <label>@font-family-alt</label>
+                <input type="text" class="span3" placeholder="@font-family-serif">
+                <label>@headings-font-family</label>
                 <input type="text" class="span3" placeholder="inherit">
-                <label>@headingsFontWeight</label>
+                <label>@headings-font-weight</label>
                 <input type="text" class="span3" placeholder="bold">
-                <label>@headingsColor</label>
+                <label>@headings-color</label>
                 <input type="text" class="span3" placeholder="inherit">
 
-                <label>@fontSizeLarge</label>
-                <input type="text" class="span3" placeholder="@baseFontSize * 1.25">
-                <label>@fontSizeSmall</label>
-                <input type="text" class="span3" placeholder="@baseFontSize * 0.85">
-                <label>@fontSizeMini</label>
-                <input type="text" class="span3" placeholder="@baseFontSize * 0.75">
+                <label>@font-size-large</label>
+                <input type="text" class="span3" placeholder="@font-size-base * 1.25">
+                <label>@font-size-small</label>
+                <input type="text" class="span3" placeholder="@font-size-base * 0.85">
+                <label>@font-size-mini</label>
+                <input type="text" class="span3" placeholder="@font-size-base * 0.75">
 
-                <label>@paddingLarge</label>
+                <label>@padding-large</label>
                 <input type="text" class="span3" placeholder="11px 19px">
-                <label>@paddingSmall</label>
+                <label>@padding-small</label>
                 <input type="text" class="span3" placeholder="2px 10px">
-                <label>@paddingMini</label>
+                <label>@padding-mini</label>
                 <input type="text" class="span3" placeholder="1px 6px">
 
-                <label>@baseBorderRadius</label>
+                <label>@border-radius-base</label>
                 <input type="text" class="span3" placeholder="4px">
-                <label>@borderRadiusLarge</label>
+                <label>@border-radius-large</label>
                 <input type="text" class="span3" placeholder="6px">
-                <label>@borderRadiusSmall</label>
+                <label>@border-radius-small</label>
                 <input type="text" class="span3" placeholder="3px">
 
-                <label>@heroUnitBackground</label>
-                <input type="text" class="span3" placeholder="@grayLighter">
-                <label>@heroUnitHeadingColor</label>
+                <label>@hero-unit-bg</label>
+                <input type="text" class="span3" placeholder="@gray-lighter">
+                <label>@hero-unit-heading-color</label>
                 <input type="text" class="span3" placeholder="inherit">
-                <label>@heroUnitLeadColor</label>
+                <label>@hero-unit-lead-color</label>
                 <input type="text" class="span3" placeholder="inherit">
 
                 <h3>Tables</h3>
-                <label>@tableBackground</label>
+                <label>@table-bg</label>
                 <input type="text" class="span3" placeholder="transparent">
-                <label>@tableBackgroundAccent</label>
+                <label>@table-accent-bg</label>
                 <input type="text" class="span3" placeholder="#f9f9f9">
-                <label>@tableBackgroundHover</label>
+                <label>@table-hover-bg</label>
                 <input type="text" class="span3" placeholder="#f5f5f5">
-                <label>@tableBorder</label>
+                <label>@table-border-color</label>
                 <input type="text" class="span3" placeholder="#ddd">
 
                 <h3>Forms</h3>
-                <label>@placeholderText</label>
-                <input type="text" class="span3" placeholder="@grayLight">
-                <label>@inputBackground</label>
+                <label>@input-color-placeholder</label>
+                <input type="text" class="span3" placeholder="@gray-light">
+                <label>@input-bg</label>
                 <input type="text" class="span3" placeholder="@white">
-                <label>@inputBorder</label>
+                <label>@$input-border</label>
                 <input type="text" class="span3" placeholder="#ccc">
-                <label>@inputBorderRadius</label>
+                <label>@$input-border-radius</label>
                 <input type="text" class="span3" placeholder="3px">
-                <label>@inputDisabledBackground</label>
-                <input type="text" class="span3" placeholder="@grayLighter">
-                <label>@formActionsBackground</label>
+                <label>@input-bg-disabled</label>
+                <input type="text" class="span3" placeholder="@gray-lighter">
+                <label>@input-actions-background</label>
                 <input type="text" class="span3" placeholder="#f5f5f5">
-                <label>@btnPrimaryBackground</label>
-                <input type="text" class="span3" placeholder="@linkColor">
-                <label>@btnPrimaryBackgroundHighlight</label>
+                <label>@$btn-primary-bg</label>
+                <input type="text" class="span3" placeholder="@link-color">
+                <label>@$btn-primary-highlight-bg</label>
                 <input type="text" class="span3" placeholder="darken(@white, 10%)">
 
               </div><!-- /span -->
               <div class="span3">
 
                 <h3>Form states &amp; alerts</h3>
-                <label>@warningText</label>
+                <label>@state-warning-text</label>
                 <input type="text" class="span3" placeholder="#c09853">
-                <label>@warningBackground</label>
+                <label>@state-warning-bg</label>
                 <input type="text" class="span3" placeholder="#fcf8e3">
-                <label>@errorText</label>
+                <label>@state-error-text</label>
                 <input type="text" class="span3" placeholder="#b94a48">
-                <label>@errorBackground</label>
+                <label>@state-error-bg</label>
                 <input type="text" class="span3" placeholder="#f2dede">
-                <label>@successText</label>
+                <label>@state-success-text</label>
                 <input type="text" class="span3" placeholder="#468847">
-                <label>@successBackground</label>
+                <label>@state-success-bg</label>
                 <input type="text" class="span3" placeholder="#dff0d8">
-                <label>@infoText</label>
+                <label>@state-info-text</label>
                 <input type="text" class="span3" placeholder="#3a87ad">
-                <label>@infoBackground</label>
+                <label>@state-info-bg</label>
                 <input type="text" class="span3" placeholder="#d9edf7">
 
                 <h3>Navbar</h3>
-                <label>@navbarHeight</label>
+                <label>@navbar-height</label>
                 <input type="text" class="span3" placeholder="40px">
-                <label>@navbarBackground</label>
-                <input type="text" class="span3" placeholder="@grayDarker">
-                <label>@navbarBackgroundHighlight</label>
-                <input type="text" class="span3" placeholder="@grayDark">
-                <label>@navbarText</label>
-                <input type="text" class="span3" placeholder="@grayLight">
-                <label>@navbarBrandColor</label>
-                <input type="text" class="span3" placeholder="@navbarLinkColor">
-                <label>@navbarLinkColor</label>
-                <input type="text" class="span3" placeholder="@grayLight">
-                <label>@navbarLinkColorHover</label>
+                <label>@navbar-bg</label>
+                <input type="text" class="span3" placeholder="@gray-darker">
+                <label>@navbar-bg-highlight</label>
+                <input type="text" class="span3" placeholder="@gray-dark">
+                <label>@navbar-color</label>
+                <input type="text" class="span3" placeholder="@gray-light">
+                <label>@navbar-default-brand-color</label>
+                <input type="text" class="span3" placeholder="@navbar-link-color">
+                <label>@navbar-link-color</label>
+                <input type="text" class="span3" placeholder="@gray-light">
+                <label>@navbar-link-hover-color</label>
                 <input type="text" class="span3" placeholder="@white">
-                <label>@navbarLinkColorActive</label>
-                <input type="text" class="span3" placeholder="@navbarLinkColorHover">
-                <label>@navbarLinkBackgroundHover</label>
+                <label>@navbar-link-active-color</label>
+                <input type="text" class="span3" placeholder="@navbar-link-hover-color">
+                <label>@navbar-link-hover-bg</label>
                 <input type="text" class="span3" placeholder="transparent">
-                <label>@navbarLinkBackgroundActive</label>
-                <input type="text" class="span3" placeholder="@navbarBackground">
+                <label>@navbar-link-active-bg</label>
+                <input type="text" class="span3" placeholder="@navbar-bg">
                 <label>@navbarSearchBackground</label>
-                <input type="text" class="span3" placeholder="lighten(@navbarBackground, 25%)">
+                <input type="text" class="span3" placeholder="lighten(@navbar-bg, 25%)">
                 <label>@navbarSearchBackgroundFocus</label>
                 <input type="text" class="span3" placeholder="@white">
                 <label>@navbarSearchBorder</label>
@@ -432,22 +422,22 @@
                 <label>@navbarSearchPlaceholderColor</label>
                 <input type="text" class="span3" placeholder="#ccc">
 
-                <label>@navbarCollapseWidth</label>
+                <label>@navbar-collapse-width</label>
                 <input type="text" class="span3" placeholder="979px">
-                <label>@navbarCollapseDesktopWidth</label>
-                <input type="text" class="span3" placeholder="@navbarCollapseWidth + 1">
+                <label>@navbar-collapse-width-desktop</label>
+                <input type="text" class="span3" placeholder="@navbar-collapse-width + 1">
 
                 <h3>Dropdowns</h3>
-                <label>@dropdownBackground</label>
+                <label>@dropdown-bg</label>
                 <input type="text" class="span3" placeholder="@white">
-                <label>@dropdownBorder</label>
+                <label>@dropdown-border</label>
                 <input type="text" class="span3" placeholder="rgba(0,0,0,.2)">
-                <label>@dropdownLinkColor</label>
-                <input type="text" class="span3" placeholder="@grayDark">
-                <label>@dropdownLinkColorHover</label>
+                <label>@dropdown-link-color</label>
+                <input type="text" class="span3" placeholder="@gray-dark">
+                <label>@dropdown-link-hover-color</label>
                 <input type="text" class="span3" placeholder="@white">
-                <label>@dropdownLinkBackgroundHover</label>
-                <input type="text" class="span3" placeholder="@linkColor">
+                <label>@dropdown-link-hover-bg</label>
+                <input type="text" class="span3" placeholder="@link-color">
               </div><!-- /span -->
             </div><!-- /row -->
           </section>
@@ -459,7 +449,7 @@
               </h1>
             </div>
             <div class="download-btn">
-              <a class="btn btn-primary" href="#" onclick="_gaq.push(['_trackEvent', 'Customize', 'Download', 'Customize and Download']);">Customize and Download</a>
+              <a class="btn btn-primary" href="#" >Customize and Download</a>
               <h4>What's included?</h4>
               <p>Downloads include compiled CSS, compiled and minified CSS, and compiled jQuery plugins, all nicely packed up into a zipball for your convenience.</p>
             </div>
@@ -519,21 +509,6 @@
     <script src="assets/js/application.js"></script>
 
 
-    <!-- Analytics
-    ================================================== -->
-    <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
 
   </body>
 </html>

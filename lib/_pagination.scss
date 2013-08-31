@@ -4,7 +4,7 @@
 
 // Space out pagination from surrounding content
 .pagination {
-  margin: $baseLineHeight 0;
+  margin: $line-height-base 0;
 }
 
 .pagination ul {
@@ -15,7 +15,7 @@
   margin-left: 0;
   margin-bottom: 0;
   // Visuals
-  @include border-radius($baseBorderRadius);
+  @include border-radius($border-radius-base);
   @include box-shadow(0 1px 2px rgba(0,0,0,.05));
 }
 .pagination ul > li {
@@ -25,39 +25,39 @@
 .pagination ul > li > span {
   float: left; // Collapse white-space
   padding: 4px 12px;
-  line-height: $baseLineHeight;
+  line-height: $line-height-base;
   text-decoration: none;
-  background-color: $paginationBackground;
-  border: 1px solid $paginationBorder;
+  background-color: $pagination-bg;
+  border: 1px solid $pagination-border;
   border-left-width: 0;
 }
 .pagination ul > li > a:hover,
 .pagination ul > li > a:focus,
 .pagination ul > .active > a,
 .pagination ul > .active > span {
-  background-color: $paginationActiveBackground;
+  background-color: $pagination-active-bg;
 }
 .pagination ul > .active > a,
 .pagination ul > .active > span {
-  color: $grayLight;
+  color: $gray-light;
   cursor: default;
 }
 .pagination ul > .disabled > span,
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover,
 .pagination ul > .disabled > a:focus {
-  color: $grayLight;
+  color: $gray-light;
   background-color: transparent;
   cursor: default;
 }
 .pagination ul > li:first-child > a,
 .pagination ul > li:first-child > span {
   border-left-width: 1px;
-  @include border-left-radius($baseBorderRadius);
+  @include border-left-radius($border-radius-base);
 }
 .pagination ul > li:last-child > a,
 .pagination ul > li:last-child > span {
-  @include border-right-radius($baseBorderRadius);
+  @include border-right-radius($border-radius-base);
 }
 
 
@@ -79,16 +79,16 @@
 .pagination-large {
   ul > li > a,
   ul > li > span {
-    padding: $paddingLarge;
-    font-size: $fontSizeLarge;
+    padding: $padding-large;
+    font-size: $font-size-large;
   }
   ul > li:first-child > a,
   ul > li:first-child > span {
-    @include border-left-radius($borderRadiusLarge);
+    @include border-left-radius($border-radius-large);
   }
   ul > li:last-child > a,
   ul > li:last-child > span {
-    @include border-right-radius($borderRadiusLarge);
+    @include border-right-radius($border-radius-large);
   }
 }
 
@@ -97,11 +97,11 @@
 .pagination-small {
   ul > li:first-child > a,
   ul > li:first-child > span {
-    @include border-left-radius($borderRadiusSmall);
+    @include border-left-radius($border-radius-small);
   }
   ul > li:last-child > a,
   ul > li:last-child > span {
-    @include border-right-radius($borderRadiusSmall);
+    @include border-right-radius($border-radius-small);
   }
 }
 
@@ -109,15 +109,15 @@
 .pagination-small {
   ul > li > a,
   ul > li > span {
-    padding: $paddingSmall;
-    font-size: $fontSizeSmall;
+    padding: $padding-small;
+    font-size: $font-size-small;
   }
 }
 // Mini
 .pagination-mini {
   ul > li > a,
   ul > li > span {
-    padding: $paddingMini;
-    font-size: $fontSizeMini;
+    padding: $padding-mini;
+    font-size: $font-size-mini;
   }
 }

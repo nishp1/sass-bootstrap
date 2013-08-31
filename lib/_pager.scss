@@ -4,7 +4,7 @@
 
 
 .pager {
-  margin: $baseLineHeight 0;
+  margin: $line-height-base 0;
   list-style: none;
   text-align: center;
   @include clearfix();
@@ -37,7 +37,7 @@
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
 .pager .disabled > span {
-  color: $grayLight;
+  color: $gray-light;
   background-color: #fff;
   cursor: default;
 }
