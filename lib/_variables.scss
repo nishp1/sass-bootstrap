@@ -299,3 +299,19 @@ $fluid-grid-gutter-width-1200:     percentage($grid-gutter-width-1200/$grid-row-
 // 768px-979px
 $fluid-grid-column-width-768:      percentage($grid-column-width-768/$grid-row-width-768) !default;
 $fluid-grid-gutter-width-768:      percentage($grid-gutter-width-768/$grid-row-width-768) !default;
+
+
+// Modals
+// -------------------------
+$modal-inner-padding:         20px !default;
+
+$modal-title-padding:         15px !default;
+$modal-title-line-height:     $line-height-base !default;
+
+$modal-content-bg:                             #fff !default;
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+$modal-content-fallback-border-color:          #999 !default;
+
+$modal-backdrop-bg:           #000 !default;
+$modal-header-border-color:   #e5e5e5 !default;
+$modal-footer-border-color:   $modal-header-border-color !default;
