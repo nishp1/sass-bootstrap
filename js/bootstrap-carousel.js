@@ -59,7 +59,7 @@
       if (pos > (this.$items.length - 1) || pos < 0) return
 
       if (this.sliding) {
-        return this.$element.one('slid', function () {
+        return this.$element.one('slid.bs.carousel', function () {
           that.to(pos)
         })
       }
@@ -107,7 +107,7 @@
 
       $next = $next.length ? $next : this.$element.find('.item')[fallback]()
 
-      e = $.Event('slide', {
+      e = $.Event('slide.bs.carousel', {
         relatedTarget: $next[0]
       , direction: direction
       })
@@ -116,7 +116,7 @@
 
       if (this.$indicators.length) {
         this.$indicators.find('.active').removeClass('active')
-        this.$element.one('slid', function () {
+        this.$element.one('slid.bs.carousel', function () {
           var $nextIndicator = $(that.$indicators.children()[that.getActiveIndex()])
           $nextIndicator && $nextIndicator.addClass('active')
         })
@@ -133,7 +133,7 @@
           $next.removeClass([type, direction].join(' ')).addClass('active')
           $active.removeClass(['active', direction].join(' '))
           that.sliding = false
-          setTimeout(function () { that.$element.trigger('slid') }, 0)
+          setTimeout(function () { that.$element.trigger('slid.bs.carousel') }, 0)
         })
       } else {
         this.$element.trigger(e)
@@ -141,7 +141,7 @@
         $active.removeClass('active')
         $next.addClass('active')
         this.sliding = false
-        this.$element.trigger('slid')
+        this.$element.trigger('slid.bs.carousel')
       }
 
       isCycling && this.cycle()

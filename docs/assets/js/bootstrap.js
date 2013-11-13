@@ -845,7 +845,7 @@
 
     , show: function () {
         var that = this
-          , e = $.Event('show')
+          , e = $.Event('show.bs.modal')
 
         this.$element.trigger(e)
 
@@ -875,8 +875,8 @@
           that.enforceFocus()
 
           transition ?
-            that.$element.one($.support.transition.end, function () { that.$element.focus().trigger('shown') }) :
-            that.$element.focus().trigger('shown')
+            that.$element.one($.support.transition.end, function () { that.$element.focus().trigger('shown.bs.modal') }) :
+            that.$element.focus().trigger('shown.bs.modal')
 
         })
       }
@@ -886,7 +886,7 @@
 
         var that = this
 
-        e = $.Event('hide')
+        e = $.Event('hide.bs.modal')
 
         this.$element.trigger(e)
 
@@ -896,7 +896,7 @@
 
         this.escape()
 
-        $(document).off('focusin.modal')
+        $(document).off('focusin.bs.modal')
 
         this.$element
           .removeClass('in')
@@ -909,7 +909,7 @@
 
     , enforceFocus: function () {
         var that = this
-        $(document).on('focusin.modal', function (e) {
+        $(document).on('focusin.bs.modal', function (e) {
           if (that.$element[0] !== e.target && !that.$element.has(e.target).length) {
             that.$element.focus()
           }
@@ -945,7 +945,7 @@
         this.$element.hide()
         this.backdrop(function () {
           that.removeBackdrop()
-          that.$element.trigger('hidden')
+          that.$element.trigger('hidden.bs.modal')
         })
       }
 
@@ -1031,7 +1031,7 @@
  /* MODAL DATA-API
   * ============== */
 
-  $(document).on('click.modal.data-api', '[data-toggle="modal"]', function (e) {
+  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
     var $this = $(this)
       , href = $this.attr('href')
       , $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
