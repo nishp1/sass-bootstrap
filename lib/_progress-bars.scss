@@ -115,8 +115,8 @@
 
 // Warning (orange)
 .progress-warning .bar, .progress .bar-warning {
-  @include gradient-vertical(lighten($orange, 15%), $orange);
+  @include gradient-vertical(lighten($brand-warning, 15%), $brand-warning);
 }
 .progress-warning.progress-striped .bar, .progress-striped .bar-warning {
-  @include gradient-striped(lighten($orange, 15%));
+  @include gradient-striped(lighten($brand-warning, 15%));
 }

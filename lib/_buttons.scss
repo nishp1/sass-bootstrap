@@ -17,13 +17,12 @@
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  @include buttonBackground($btn-default-bg, $btn-default-highlight-bg, $gray-dark, 0 1px 1px rgba(255,255,255,.75));
-  border: 1px solid $btn-default-border-color;
+  @include buttonBackground($btn-default-bg, $btn-default-color, $btn-default-border);
+  border: 1px solid $btn-default-border;
   *border: 0; // Remove the border to prevent IE7's black border on input:focus
-  border-bottom-color: darken($btn-default-border-color, 10%);
+  border-bottom-color: darken($btn-default-border, 10%);
   @include border-radius($border-radius-base);
   @include ie7-restore-left-whitespace(); // Give IE7 some love
-  @include box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
 
   // Hover/focus state
   &:hover,
@@ -143,27 +142,27 @@ input[type="button"] {
 // Set the backgrounds
 // -------------------------
 .btn-primary {
-  @include buttonBackground($btn-primary-bg, $btn-primary-highlight-bg);
+  @include buttonBackground($btn-primary-bg, $btn-primary-color, $btn-primary-border);
 }
 // Warning appears are orange
 .btn-warning {
-  @include buttonBackground($btn-warning-bg, $btn-warning-highlight-bg);
+  @include buttonBackground($btn-warning-bg, $btn-warning-color, $btn-warning-border);
 }
 // Danger and error appear as red
 .btn-danger {
-  @include buttonBackground($btn-danger-bg, $btn-danger-highlight-bg);
+  @include buttonBackground($btn-danger-bg, $btn-danger-color, $btn-danger-border);
 }
 // Success appears as green
 .btn-success {
-  @include buttonBackground($btn-success-bg, $btn-success-highlight-bg);
+  @include buttonBackground($btn-success-bg, $btn-success-color, $btn-success-border);
 }
 // Info appears as a neutral blue
 .btn-info {
-  @include buttonBackground($btn-info-bg, $btn-info-highlight-bg);
+  @include buttonBackground($btn-info-bg, $btn-info-color, $btn-info-border);
 }
 // Inverse appears as dark gray
 .btn-inverse {
-  @include buttonBackground($btn-inverse-bg, $btn-inverse-highlight-bg);
+  @include buttonBackground($btn-inverse-bg, $btn-inverse-color, $btn-inverse-border);
 }
 
 
@@ -220,6 +219,7 @@ input[type="submit"].btn {
   color: $link-color-hover;
   text-decoration: underline;
   background-color: transparent;
+  border-color: transparent;
 }
 .btn-link[disabled]:hover,
 .btn-link[disabled]:focus {

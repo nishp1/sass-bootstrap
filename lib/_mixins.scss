@@ -503,23 +503,24 @@
 
 // Button backgrounds
 // ------------------
-@mixin buttonBackground($startColor, $endColor, $text-color: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+@mixin buttonBackground($background, $color: #fff, $border: #fff) {
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
-  @include gradientBar($startColor, $endColor, $text-color, $textShadow);
-  *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  @include reset-filter();
+  //@include gradientBar($startColor, $endColor, $text-color, $textShadow);
+  background-color: $background;
+  color: $color;
+  border: 1px solid $border;
 
   // in these cases the gradient won't cover the background, so we override
   &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
-    color: $text-color;
-    background-color: $endColor;
-    *background-color: darken($endColor, 5%);
+    color: $color;
+    background-color: darken($background, 8%);
+        border-color: darken($border, 12%);
   }
 
   // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
   &:active,
   &.active {
-    background-color: darken($endColor, 10%) \9;
+    background-color: darken($background, 10%) \9;
   }
 }
 

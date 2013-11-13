@@ -470,8 +470,8 @@ select:focus:invalid {
     @include border-radius(0);
   }
   .active {
-    background-color: lighten($green, 30);
-    border-color: $green;
+    background-color: lighten($brand-success, 30);
+    border-color: $brand-success;
   }
 }
 

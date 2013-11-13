@@ -54,8 +54,8 @@ a {
   .#{$item}-important         { background-color: $state-error-text; }
   .#{$item}-important[href]   { background-color: darken($state-error-text, 10%); }
   // Warnings (orange)
-  .#{$item}-warning           { background-color: $orange; }
-  .#{$item}-warning[href]     { background-color: darken($orange, 10%); }
+  .#{$item}-warning           { background-color: $brand-warning; }
+  .#{$item}-warning[href]     { background-color: darken($brand-warning, 10%); }
   // Success (green)
   .#{$item}-success           { background-color: $state-success-text; }
   .#{$item}-success[href]     { background-color: darken($state-success-text, 10%); }

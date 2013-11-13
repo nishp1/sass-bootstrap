@@ -18,16 +18,13 @@ $gray-lighter:          #eee !default;
 $white:                 #fff !default;
 
 
-// Accent colors
+// Brand colors
 // -------------------------
-$blue:                  #049cdb !default;
-$blue-dark:             #0064cd !default;
-$green:                 #46a546 !default;
-$red:                   #9d261d !default;
-$yellow:                #ffc40d !default;
-$orange:                #f89406 !default;
-$pink:                  #c3325f !default;
-$purple:                #7a43b6 !default;
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-info:            #5bc0de;
 
 
 // Scaffolding
@@ -84,27 +81,38 @@ $table-border-color:        #ddd !default; // table and cell border
 
 // Buttons
 // -------------------------
-$btn-default-bg:                $white !default;
-$btn-default-highlight-bg:      darken($white, 10%) !default;
-$btn-default-border-color:      #ccc !default;
+$btn-font-weight:                normal !default;
 
-$btn-primary-bg:                $link-color !default;
-$btn-primary-highlight-bg:      adjust-hue($btn-primary-bg, 20%) !default;
+$btn-default-color:              #333 !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ccc !default;
 
-$btn-info-bg:                   #5bc0de !default;
-$btn-info-highlight-bg:         #2f96b4 !default;
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
 
-$btn-success-bg:                #62c462 !default;
-$btn-success-highlight-bg:      #51a351 !default;
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $brand-success !default;
+$btn-success-border:             darken($btn-success-bg, 5%) !default;
 
-$btn-warning-bg:                lighten($orange, 15%) !default;
-$btn-warning-highlight-bg:      $orange !default;
+$btn-warning-color:              #fff !default;
+$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
 
-$btn-danger-bg:                 #ee5f5b !default;
-$btn-danger-highlight-bg:       #bd362f !default;
+$btn-danger-color:               #fff !default;
+$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 
-$btn-inverse-bg:                #444 !default;
-$btn-inverse-highlight-bg:      $gray-darker !default;
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    $brand-info !default;
+$btn-info-border:                darken($btn-info-bg, 5%) !default;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+$btn-inverse-color:                 #fff !default;
+$btn-inverse-bg:                    $gray-dark !default;
+$btn-inverse-border:                $gray-darker !default;
+
 
 
 // Forms
