@@ -51,7 +51,7 @@
 
       previous = $ul.find('.active:last a')[0]
 
-      e = $.Event('show', {
+      e = $.Event('show.bs.tab', {
         relatedTarget: previous
       })
 
@@ -64,7 +64,7 @@
       this.activate($this.parent('li'), $ul)
       this.activate($target, $target.parent(), function () {
         $this.trigger({
-          type: 'shown'
+          type: 'shown.bs.tab'
         , relatedTarget: previous
         })
       })

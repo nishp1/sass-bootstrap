@@ -47,7 +47,7 @@
 
     $parent.length || ($parent = $this.hasClass('alert') ? $this : $this.parent())
 
-    $parent.trigger(e = $.Event('close'))
+    $parent.trigger(e = $.Event('close.bs.alert'))
 
     if (e.isDefaultPrevented()) return
 
@@ -55,7 +55,7 @@
 
     function removeElement() {
       $parent
-        .trigger('closed')
+        .trigger('closed.bs.alert')
         .remove()
     }
 

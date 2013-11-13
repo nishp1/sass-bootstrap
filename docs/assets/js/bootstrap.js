@@ -106,7 +106,7 @@
 
     $parent.length || ($parent = $this.hasClass('alert') ? $this : $this.parent())
 
-    $parent.trigger(e = $.Event('close'))
+    $parent.trigger(e = $.Event('close.bs.alert'))
 
     if (e.isDefaultPrevented()) return
 
@@ -114,7 +114,7 @@
 
     function removeElement() {
       $parent
-        .trigger('closed')
+        .trigger('closed.bs.alert')
         .remove()
     }
 
@@ -320,7 +320,7 @@
       if (pos > (this.$items.length - 1) || pos < 0) return
 
       if (this.sliding) {
-        return this.$element.one('slid', function () {
+        return this.$element.one('slid.bs.carousel', function () {
           that.to(pos)
         })
       }
@@ -368,7 +368,7 @@
 
       $next = $next.length ? $next : this.$element.find('.item')[fallback]()
 
-      e = $.Event('slide', {
+      e = $.Event('slide.bs.carousel', {
         relatedTarget: $next[0]
       , direction: direction
       })
@@ -377,7 +377,7 @@
 
       if (this.$indicators.length) {
         this.$indicators.find('.active').removeClass('active')
-        this.$element.one('slid', function () {
+        this.$element.one('slid.bs.carousel', function () {
           var $nextIndicator = $(that.$indicators.children()[that.getActiveIndex()])
           $nextIndicator && $nextIndicator.addClass('active')
         })
@@ -394,7 +394,7 @@
           $next.removeClass([type, direction].join(' ')).addClass('active')
           $active.removeClass(['active', direction].join(' '))
           that.sliding = false
-          setTimeout(function () { that.$element.trigger('slid') }, 0)
+          setTimeout(function () { that.$element.trigger('slid.bs.carousel') }, 0)
         })
       } else {
         this.$element.trigger(e)
@@ -402,7 +402,7 @@
         $active.removeClass('active')
         $next.addClass('active')
         this.sliding = false
-        this.$element.trigger('slid')
+        this.$element.trigger('slid.bs.carousel')
       }
 
       isCycling && this.cycle()
@@ -533,7 +533,7 @@
       }
 
       this.$element[dimension](0)
-      this.transition('addClass', $.Event('show'), 'shown')
+      this.transition('addClass', $.Event('show.bs.collapse'), 'shown.bs.collapse')
       $.support.transition && this.$element[dimension](this.$element[0][scroll])
     }
 
@@ -542,7 +542,7 @@
       if (this.transitioning || !this.$element.hasClass('in')) return
       dimension = this.dimension()
       this.reset(this.$element[dimension]())
-      this.transition('removeClass', $.Event('hide'), 'hidden')
+      this.transition('removeClass', $.Event('hide.bs.collapse'), 'hidden.bs.collapse')
       this.$element[dimension](0)
     }
 
@@ -1167,7 +1167,7 @@
         , actualHeight
         , placement
         , tp
-        , e = $.Event('show')
+        , e = $.Event('show.bs.' + this.type)
 
       if (this.hasContent() && this.enabled) {
         this.$element.trigger(e)
@@ -1210,7 +1210,7 @@
         }
 
         this.applyPlacement(tp, placement)
-        this.$element.trigger('shown')
+        this.$element.trigger('shown.bs.' + this.type)
       }
     }
 
@@ -1272,7 +1272,7 @@
   , hide: function () {
       var that = this
         , $tip = this.tip()
-        , e = $.Event('hide')
+        , e = $.Event('hide.bs.' + this.type)
 
       this.$element.trigger(e)
       if (e.isDefaultPrevented()) return
@@ -1294,7 +1294,7 @@
         removeWithAnimation() :
         $tip.detach()
 
-      this.$element.trigger('hidden')
+      this.$element.trigger('hidden.bs.' + this.type)
 
       return this
     }
@@ -1736,7 +1736,7 @@
 
       previous = $ul.find('.active:last a')[0]
 
-      e = $.Event('show', {
+      e = $.Event('show.bs.tab', {
         relatedTarget: previous
       })
 
@@ -1749,7 +1749,7 @@
       this.activate($this.parent('li'), $ul)
       this.activate($target, $target.parent(), function () {
         $this.trigger({
-          type: 'shown'
+          type: 'shown.bs.tab'
         , relatedTarget: previous
         })
       })

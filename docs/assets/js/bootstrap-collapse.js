@@ -66,7 +66,7 @@
       }
 
       this.$element[dimension](0)
-      this.transition('addClass', $.Event('show'), 'shown')
+      this.transition('addClass', $.Event('show.bs.collapse'), 'shown.bs.collapse')
       $.support.transition && this.$element[dimension](this.$element[0][scroll])
     }
 
@@ -75,7 +75,7 @@
       if (this.transitioning || !this.$element.hasClass('in')) return
       dimension = this.dimension()
       this.reset(this.$element[dimension]())
-      this.transition('removeClass', $.Event('hide'), 'hidden')
+      this.transition('removeClass', $.Event('hide.bs.collapse'), 'hidden.bs.collapse')
       this.$element[dimension](0)
     }
 
