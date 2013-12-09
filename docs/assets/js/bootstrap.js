@@ -2314,7 +2314,7 @@
     * =============================== */
 
     var Switch = function (element, options) {
-        this.init(element, options)
+        this.init(element, options);
     };
 
      Switch.prototype = {
@@ -2326,7 +2326,36 @@
             this.options = options;
 
             this.$element.wrap('<label class="switch"></label>').after('<div class="track"><div class="knob"></div></div>');
+        },
+
+        enable: function () {
+            this.$element.removeAttr('disabled');
+        },
+
+        disable: function () {
+            this.$element.attr('disabled', true);
+        },
+
+        on: function () {
+            !this.$element.is(':checked') && this._check();
+        },
+
+        off: function () {
+            this.$element.is(':checked') && this._uncheck();
+        },
+
+        toggle: function () {
+            this.$element.is(':checked') ? this._uncheck() : this._check();
+        },
+
+        _check: function () {
+            this.$element.attr('checked', true).addClass('checked');
+        },
+
+        _uncheck: function () {
+            this.$element.removeAttr('checked').removeClass('checked');
         }
+
     };
 
     /* CHECKBOX PLUGIN DEFINITION

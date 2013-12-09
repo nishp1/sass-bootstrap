@@ -35,41 +35,18 @@
   <body>
 
     <div class="container">
-
-    <label>Big<input type="checkbox" class="ios green large" checked />
-      <div class="track">
-        <div class="knob"></div>
-      </div>
-    </label>
-    <label><input type="checkbox" class="ios large" checked />
-      <div class="track">
-        <div class="knob"></div>
-      </div>
-    </label>
-
-    <label>Normal<input type="checkbox" class="ios green" />
-      <div class="track">
-        <div class="knob"></div>
-      </div>
-    </label>
-    <label><input type="checkbox" class="ios"  />
-      <div class="track">
-        <div class="knob"></div>
-      </div>
-    </label>
-
-    <label>Tiny<input type="checkbox" class="ios green small" checked />
-      <div class="track">
-        <div class="knob"></div>
-      </div>
-    </label>
-    <label><input type="checkbox" class="ios small" checked />
-      <div class="track">
-        <div class="knob"></div>
-      </div>
-    </label>
-
-    <input type="checkbox" class="ios small" checked id="selectme"/>
+    
+    <h3>Large</h3>
+    <input type="checkbox" class="ios green large" checked />
+    <input type="checkbox" class="ios large"  />
+    
+    <h3>Base</h3>
+    <input type="checkbox" class="ios green" checked/>
+    <input type="checkbox" class="ios"  />
+    
+    <h3>Small</h3>
+    <input type="checkbox" class="ios green small" checked />
+    <input type="checkbox" class="ios small"  />
 
     </div> <!-- /container -->
 
@@ -88,11 +65,11 @@
     <script src="../../docs/assets/js/bootstrap-button.js"></script>
     <script src="../../docs/assets/js/bootstrap-collapse.js"></script>
     <script src="../../docs/assets/js/bootstrap-carousel.js"></script>
-    <script src="../../docs/assets/js/bootstrap-checkbox.js"></script>
+    <script src="../../docs/assets/js/bootstrap-switch.js"></script>
     <script src="../../docs/assets/js/bootstrap-typeahead.js"></script>
 
     <script>
-      $('#selectme').checkbox();
+      $('input[type="checkbox"]').svitch();
     </script>
 
   </body>
