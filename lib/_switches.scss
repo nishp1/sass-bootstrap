@@ -122,6 +122,32 @@ input[type="checkbox"].small.ios + .track > .knob {
     }
 }
 
+// Set the backgrounds
+// -------------------------
+input[type="checkbox"].ios.brand-success:checked + .track {
+    @include ios-checked-track($brand-success, $switch-height-large);
+}
+input[type="checkbox"].ios.brand-success.checked + .track {
+    @include ios-checked-track($brand-success, $switch-height-large);
+}
 
+input[type="checkbox"].ios.brand-warning:checked + .track {
+    @include ios-checked-track($brand-warning, $switch-height-large);
+}
+input[type="checkbox"].ios.brand-warning.checked + .track {
+    @include ios-checked-track($brand-warning, $switch-height-large);
+}
 
+input[type="checkbox"].ios.brand-danger:checked + .track {
+    @include ios-checked-track($brand-danger, $switch-height-large);
+}
+input[type="checkbox"].ios.brand-danger.checked + .track {
+    @include ios-checked-track($brand-danger, $switch-height-large);
+}
 
+input[type="checkbox"].ios.brand-info:checked + .track {
+    @include ios-checked-track($brand-info, $switch-height-large);
+}
+input[type="checkbox"].ios.brand-info.checked + .track {
+    @include ios-checked-track($brand-info, $switch-height-large);
+}

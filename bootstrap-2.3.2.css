@@ -5081,15 +5081,15 @@ input[type="checkbox"].ios + .track {
 input[type="checkbox"].ios:checked + .track {
   background-position: 0 0;
   background-color: #428bca;
-  border: 1px solid #0e62cd;
-  box-shadow: inset 0 0 0 25px #3b89ff;
+  border: 1px solid #357ebd;
+  box-shadow: inset 0 0 0 25px #468dcb;
 }
 
 input[type="checkbox"].ios.checked + .track {
   background-position: 0 0;
   background-color: #428bca;
-  border: 1px solid #0e62cd;
-  box-shadow: inset 0 0 0 25px #3b89ff;
+  border: 1px solid #357ebd;
+  box-shadow: inset 0 0 0 25px #468dcb;
 }
 
 /* knob */
@@ -5114,13 +5114,13 @@ input[type="checkbox"].ios + .track > .knob {
 input[type="checkbox"].ios:checked + .track > .knob {
   float: right;
   background-color: #ffffff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px #0850ac;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px #efefef;
 }
 
 input[type="checkbox"].ios.checked + .track > .knob {
   float: right;
   background-color: #ffffff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px #0850ac;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px #efefef;
 }
 
 .csstransforms input[type="checkbox"].ios:checked + .track > .knob {
@@ -5162,6 +5162,62 @@ input[type="checkbox"].small.ios + .track > .knob {
   -webkit-transform: translate3d(17px, 0, 0);
   -moz-transform: translate3d(17px, 0, 0);
   transform: translate3d(17px, 0, 0);
+}
+
+input[type="checkbox"].ios.brand-success:checked + .track {
+  background-position: 0 0;
+  background-color: #5cb85c;
+  border: 1px solid #4cae4c;
+  box-shadow: inset 0 0 0 25px #60ba60;
+}
+
+input[type="checkbox"].ios.brand-success.checked + .track {
+  background-position: 0 0;
+  background-color: #5cb85c;
+  border: 1px solid #4cae4c;
+  box-shadow: inset 0 0 0 25px #60ba60;
+}
+
+input[type="checkbox"].ios.brand-warning:checked + .track {
+  background-position: 0 0;
+  background-color: #f0ad4e;
+  border: 1px solid #eea236;
+  box-shadow: inset 0 0 0 25px #f0af53;
+}
+
+input[type="checkbox"].ios.brand-warning.checked + .track {
+  background-position: 0 0;
+  background-color: #f0ad4e;
+  border: 1px solid #eea236;
+  box-shadow: inset 0 0 0 25px #f0af53;
+}
+
+input[type="checkbox"].ios.brand-danger:checked + .track {
+  background-position: 0 0;
+  background-color: #d9534f;
+  border: 1px solid #d43f3a;
+  box-shadow: inset 0 0 0 25px #da5753;
+}
+
+input[type="checkbox"].ios.brand-danger.checked + .track {
+  background-position: 0 0;
+  background-color: #d9534f;
+  border: 1px solid #d43f3a;
+  box-shadow: inset 0 0 0 25px #da5753;
+}
+
+input[type="checkbox"].ios.brand-info:checked + .track {
+  background-position: 0 0;
+  background-color: #5bc0de;
+  border: 1px solid #46b8da;
+  box-shadow: inset 0 0 0 25px #5fc2df;
+}
+
+input[type="checkbox"].ios.brand-info.checked + .track {
+  background-position: 0 0;
+  background-color: #5bc0de;
+  border: 1px solid #46b8da;
+  box-shadow: inset 0 0 0 25px #5fc2df;
 }
 
 .thumbnails {
