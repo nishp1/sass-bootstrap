@@ -49,9 +49,12 @@
 
       }())
 
-      return transitionEnd && {
-        end: transitionEnd
+      if(transitionEnd) {
+        $('body').addClass('csstransitions');
+        return { end: transitionEnd }
       }
+      
+      return false
 
     })()
 

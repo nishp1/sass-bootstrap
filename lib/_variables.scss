@@ -334,3 +334,15 @@ $modal-backdrop-opacity:      80 !default;
 
 $modal-header-border-color:   #e5e5e5 !default;
 $modal-footer-border-color:   $modal-header-border-color !default;
+
+
+// Switches
+// -------------------------
+$switch-width-base: 40px;
+$switch-height-base: $switch-width-base/2;
+
+$switch-width-small: 34px;
+$switch-height-small: $switch-width-small/2;
+
+$switch-width-large: 50px;
+$switch-height-large: $switch-width-large/2;
