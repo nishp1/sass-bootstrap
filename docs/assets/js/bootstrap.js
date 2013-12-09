@@ -2361,15 +2361,15 @@
     /* CHECKBOX PLUGIN DEFINITION
     * ========================= */
 
-    var old = $.fn.checkbox;
+    var old = $.fn.svitch;
 
     $.fn.svitch = function ( option ) {
         return this.each(function () {
             var $this = $(this)
-                , data = $this.data('checkbox')
+                , data = $this.data('svitch')
                 , options = typeof option == 'object' && option;
 
-            if (!data) $this.data('checkbox', (data = new Switch(this, options)))
+            if (!data) $this.data('svitch', (data = new Switch(this, options)))
             if (typeof option == 'string') data[option]()
         });
     };
