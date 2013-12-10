@@ -7,7 +7,7 @@ label.switch {
         @include opacity(0);
     }
 
-    input[type="checkbox"].ios:focus {
+    input[type="checkbox"]:focus {
         outline: none;
     }
 
@@ -71,7 +71,7 @@ input[type="checkbox"].ios.checked + .track > .knob {
     @include ios-checked-knob()
 }
 
-.csstransforms {
+.csstransforms3d {
     input[type="checkbox"].ios:checked + .track > .knob {
         float: left;
         -webkit-transform: translate3d($switch-width-base - ($switch-height-base - 2) - 2, 0, 0);
@@ -91,9 +91,8 @@ input[type="checkbox"].large.ios + .track {
 input[type="checkbox"].large.ios + .track > .knob {
     width: $switch-height-large - 2;
     height: $switch-height-large - 2;
-    margin-top: 1px;
 }
-.csstransforms {
+.csstransforms3d {
     input[type="checkbox"].large.ios:checked + .track > .knob {
         -webkit-transform: translate3d($switch-width-large - ($switch-height-large - 2) - 2, 0, 0);
         -moz-transform: translate3d($switch-width-large - ($switch-height-large - 2) - 2, 0, 0);
@@ -111,10 +110,9 @@ input[type="checkbox"].small.ios + .track {
 input[type="checkbox"].small.ios + .track > .knob {
     width: $switch-height-small - 2;
     height: $switch-height-small - 2;
-    margin-top: 1px;
 }
 
-.csstransforms {
+.csstransforms3d {
     input[type="checkbox"].small.ios:checked + .track > .knob {
         -webkit-transform: translate3d($switch-width-small - ($switch-height-small - 2) - 2, 0, 0);
         -moz-transform: translate3d($switch-width-small - ($switch-height-small - 2) - 2, 0, 0);

@@ -22,7 +22,7 @@
 
     "use strict"; // jshint ;_;
 
-    var isIE7 = ($.browser && $.browser.version === 7) || $('html').hasClass('lt-ie8');
+    var isIE78 = ($.browser && $.browser.msie === true && parseInt($.browser.version, 10) < 9) || $('html').hasClass('lt-ie9');
 
     /* Switch PUBLIC CLASS DEFINITION
     * =============================== */
@@ -40,6 +40,7 @@
             this.options = options;
 
             this.$element.wrap('<label class="switch"></label>').after('<div class="track"><div class="knob"></div></div>');
+            this.$element.is(':checked') && this.$element.addClass('checked');
         },
 
         enable: function () {
@@ -95,7 +96,7 @@
         $this[checked ? 'addClass' : 'removeClass']('checked');
 
         //http://stackoverflow.com/questions/11935581/adjacent-sibling-selector-not-working-with-dynamically-added-class-in-ie7-8
-        isIE7 && $this.parent().addClass('dummyclass').removeClass('dummyclass');
+        isIE78 && $this.parent().addClass('dummyclass').removeClass('dummyclass');
 
     });
 
