@@ -2364,6 +2364,7 @@
 
     var old = $.fn.svitch;
 
+    // not a typo...can't use switch as it is a reserved word
     $.fn.svitch = function ( option ) {
         return this.each(function () {
             var $this = $(this)

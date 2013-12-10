@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <title>Javascript · Bootstrap</title>
@@ -25,6 +28,7 @@
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
+    <script src="assets/js/modernizr.js"></script>
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -95,6 +99,7 @@
           <li><a href="#popovers"><i class="icon-chevron-right"></i> Popover</a></li>
           <li><a href="#alerts"><i class="icon-chevron-right"></i> Alert</a></li>
           <li><a href="#buttons"><i class="icon-chevron-right"></i> Button</a></li>
+          <li><a href="#switches"><i class="icon-chevron-right"></i> Switches</a></li>
           <li><a href="#collapse"><i class="icon-chevron-right"></i> Collapse</a></li>
           <li><a href="#carousel"><i class="icon-chevron-right"></i> Carousel</a></li>
           <li><a href="#typeahead"><i class="icon-chevron-right"></i> Typeahead</a></li>
@@ -1242,6 +1247,70 @@ $('#my-alert').bind('closed', function () {
           </section>
 
 
+          <!-- Switches
+          ================================================== -->
+          <section id="switches">
+            <div class="page-header">
+              <h1>Switches <small>bootstrap-switch.js</small></h1>
+            </div>
+
+            <h2>Example uses</h2>
+            
+            <h4>Base</h4>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <input type="checkbox" class="ios" checked />
+            </div>
+            <pre class="prettyprint linenums">&lt;input type="checkbox" class="ios" checked /&gt;</pre>
+
+            <h4>Small</h4>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <input type="checkbox" class="ios small" checked />
+            </div>
+            <pre class="prettyprint linenums">&lt;input type="checkbox small" class="ios" checked /&gt;</pre>
+
+            <h4>Large</h4>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <input type="checkbox" class="ios large" checked />
+            </div>
+            <pre class="prettyprint linenums">&lt;input type="checkbox large" class="ios" checked /&gt;</pre>
+
+            <h4>Color variants</h4>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <input type="checkbox" class="ios brand-success" checked />
+              <input type="checkbox" class="ios brand-warning" checked />
+              <input type="checkbox" class="ios brand-danger" checked />
+              <input type="checkbox" class="ios brand-info" checked />
+            </div>
+            <pre class="prettyprint linenums">
+&lt;input type="checkbox brand-success" class="ios" checked /&gt;
+&lt;input type="checkbox brand-warning" class="ios" checked /&gt;
+&lt;input type="checkbox brand-danger" class="ios" checked /&gt;
+&lt;input type="checkbox brand-info" class="ios" checked /&gt;
+</pre>
+            <hr class="bs-docs-separator">
+
+
+            <h2>Usage</h2>
+            <p>Enable switches via JavaScript:</p>
+            <pre class="prettyprint linenums">$('input[type="checkbox"]').svitch()</pre>
+
+            <h3>Options</h3>
+            <p><em>None</em></p>
+
+            <h3>Methods</h3>
+            <h4>.svitch('enable')</h4>
+            <p>Enables switch.</p>
+            <h4>.svitch('disable')</h4>
+            <p>Disables switch.</p>
+            <h4>.svitch('on')</h4>
+            <p>Turn on switch.</p>
+            <h4>.svitch('off')</h4>
+            <p>Turn on switch.</p>
+            <h4>.svitch('toggle')</h4>
+            <p>Toggle switch on and off.</p>
+          </section>
+
+
 
           <!-- Collapse
           ================================================== -->
@@ -1764,6 +1833,7 @@ $('.carousel').carousel({
     <script src="assets/js/bootstrap-tooltip.js"></script>
     <script src="assets/js/bootstrap-popover.js"></script>
     <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-switch.js"></script>
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
@@ -1775,6 +1845,9 @@ $('.carousel').carousel({
     <script src="assets/js/application.js"></script>
 
 
+    <script>
+        $('input[type="checkbox"]').svitch();
+    </script>
 
   </body>
 </html>
